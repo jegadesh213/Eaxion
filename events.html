@@ -1,0 +1,275 @@
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300i,400" rel="stylesheet">
+        <link href="./css/event_style.css" rel="stylesheet">
+        <script src="./js/event_react.js"></script>
+      </head>
+      <body>
+
+        <!--Change View-->
+        <img id="change_view" alt="Change View" onclick="hideView()" src="./images/icons/menu.png">
+
+        <!--Squeezed View START-->
+      <div class="container" id="card-view">
+
+        <div class="card first-explode">
+          <h3 class="title">Flummox</h3>
+          <div class="bar">
+            <div class="emptybar"></div>
+            <div class="filledbar"></div>
+          </div>
+          <div class="circle">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+            <circle class="stroke" cx="60" cy="60" r="50"/>
+          </svg>
+          </div>
+        </div>
+
+        <div class="card second-explode">
+          <h3 class="title">Bamboozle</h3>
+          <div class="bar">
+            <div class="emptybar"></div>
+            <div class="filledbar"></div>
+          </div>
+          <div class="circle">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+            <circle class="stroke" cx="60" cy="60" r="50"/>
+          </svg>
+          </div>
+        </div>
+
+        <div class="card third-explode">
+          <h3 class="title">Noxious Idea</h3>
+          <div class="bar">
+            <div class="emptybar"></div>
+            <div class="filledbar"></div>
+          </div>
+          <div class="circle">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+            <circle class="stroke" cx="60" cy="60" r="50"/>
+          </svg>
+          </div>
+        </div>
+
+        <div class="card fourth-explode">
+          <h3 class="title">Rush Hour</h3>
+          <div class="bar">
+            <div class="emptybar"></div>
+            <div class="filledbar"></div>
+          </div>
+          <div class="circle">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+            <circle class="stroke" cx="60" cy="60" r="50"/>
+          </svg>
+          </div>
+        </div>
+
+        <div class="card fifth-explode">
+            <h3 class="title">Lucid Circuits</h3>
+            <div class="bar">
+              <div class="emptybar"></div>
+              <div class="filledbar"></div>
+            </div>
+            <div class="circle">
+              <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+              <circle class="stroke" cx="60" cy="60" r="50"/>
+            </svg>
+            </div>
+          </div>
+      </div>
+      <!--Squeezed View END-->
+      <!--Splitted View START-->
+      <div class="container" id="splitted-view" style="display: none;">
+
+        <div class="card-not first-explode">
+          <h3 class="title">Flummox</h3>
+          <div class="circle">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+            <circle class="stroke" cx="60" cy="60" r="50"/>
+          </svg>
+          </div>
+        </div>
+
+        <div class="card-not second-explode">
+          <h3 class="title">Bamboozle</h3>
+          <div class="circle">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+            <circle class="stroke" cx="60" cy="60" r="50"/>
+          </svg>
+          </div>
+        </div>
+
+        <div class="card-not third-explode">
+          <h3 class="title">Noxious Idea</h3>
+          <div class="circle">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+            <circle class="stroke" cx="60" cy="60" r="50"/>
+          </svg>
+          </div>
+        </div>
+
+        <div class="card-not fourth-explode">
+          <h3 class="title">Rush Hour</h3>
+          <div class="circle">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+            <circle class="stroke" cx="60" cy="60" r="50"/>
+          </svg>
+          </div>
+        </div>
+
+        <div class="card-not fifth-explode">
+            <h3 class="title">Lucid Circuits</h3>
+            <div class="circle">
+              <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+              <circle class="stroke" cx="60" cy="60" r="50"/>
+            </svg>
+            </div>
+          </div>
+
+
+
+
+        </div>
+    <!--Splitted View END-->
+    <!--Scroll anime START-->
+    <p>
+	thanks i just required the right value which is calculated prior. Thanks – 
+Xavier
+ Aug 17, 2011 at 9:25
+5
+I find it frustrating that JavaScript (and jQuery) don't do the work of calculating the right-position on your behalf. It seems a very obvious thing to want to do, and it would be nice if the framework allowed you to abstract away from having to calculate it for yourself. – 
+cartbeforehorse
+ Dec 23, 2012 at 19:01
+1
+@nickf I don't see how .position().left and .offsetWidth can give you the equivalent of an hypothetical .position().right. To compute the value of a .position().right relative to the offset parent, you'd have to know the .offsetWidth of the current element and of that offset parent, the latter being missing part. Am I missing something? – 
+avernet
+ Sep 1, 2013 at 22:06 
+2
+@nickf Right, except the parent might not be the closest offset parent. Luckily for us, jQuery can give us the closest ancestor element that is positioned with .offsetParent(). With this, we can easily get the "right position" of el with $('body').width() - (el.offsetParent.offset().left + el.offsetParent().width()). – 
+avernet
+ Sep 2, 2013 at 18:36
+3
+If you want to retrieve the position relevant to the viewport, you might try window.innerWidth - document.getElementById('foo').getBoundingClientRect().right – 
+Zeal
+ Apr 15, 2014 at 9:19
+Show 2 more comments
+
+2
+
+for pure js you can use
+
+document.querySelector('.your-class').getBoundingClientRect().left
+Share
+Edit
+Follow
+answered Jan 17 at 11:14
+user avatar
+arman amirkamali
+6944 bronze badges
+While this code snippet may solve the problem, it doesn't explain why or how it answers the question. Please include an explanation for your code, as that really helps to improve the quality of your post. Remember that you are answering the question for readers in the future, and those people might not know the reasons for your code suggestion. – 
+Luca Kiebel
+ Jan 20 at 10:59
+Add a comment
+
+13
+
+It looks to me that this works:
+
+jQuery('#elem').offset().left + jQuery('#elem').width() 
+Fiddle: http://jsfiddle.net/adamovic/fcyL5sg0/
+
+Share
+Edit
+Follow
+answered Feb 24, 2015 at 7:33
+user avatar
+Mladen Adamovic
+2,90122 gold badges2727 silver badges4343 bronze badges
+Thanks for the idea @Mladen Adamovic – 
+Ana DEV
+ Feb 3, 2016 at 13:52
+Add a comment
+
+5
+
+The CSS value is only valid if it's set via style or $.css().
+
+But if you need to get the right position of an object, you should do it using javascript / jquery.
+
+Although there are some valid solutions, it's important to note that $.fn.width() doesn't take padding and borders in account. So it's better to use outerWidth().
+
+Example:
+
+$(document).width() - ($('#elem').offset().left + $('#elem
+thanks i just required the right value which is calculated prior. Thanks – 
+Xavier
+ Aug 17, 2011 at 9:25
+5
+I find it frustrating that JavaScript (and jQuery) don't do the work of calculating the right-position on your behalf. It seems a very obvious thing to want to do, and it would be nice if the framework allowed you to abstract away from having to calculate it for yourself. – 
+cartbeforehorse
+ Dec 23, 2012 at 19:01
+1
+@nickf I don't see how .position().left and .offsetWidth can give you the equivalent of an hypothetical .position().right. To compute the value of a .position().right relative to the offset parent, you'd have to know the .offsetWidth of the current element and of that offset parent, the latter being missing part. Am I missing something? – 
+avernet
+ Sep 1, 2013 at 22:06 
+2
+@nickf Right, except the parent might not be the closest offset parent. Luckily for us, jQuery can give us the closest ancestor element that is positioned with .offsetParent(). With this, we can easily get the "right position" of el with $('body').width() - (el.offsetParent.offset().left + el.offsetParent().width()). – 
+avernet
+ Sep 2, 2013 at 18:36
+3
+If you want to retrieve the position relevant to the viewport, you might try window.innerWidth - document.getElementById('foo').getBoundingClientRect().right – 
+Zeal
+ Apr 15, 2014 at 9:19
+Show 2 more comments
+
+2
+
+for pure js you can use
+
+document.querySelector('.your-class').getBoundingClientRect().left
+Share
+Edit
+Follow
+answered Jan 17 at 11:14
+user avatar
+arman amirkamali
+6944 bronze badges
+While this code snippet may solve the problem, it doesn't explain why or how it answers the question. Please include an explanation for your code, as that really helps to improve the quality of your post. Remember that you are answering the question for readers in the future, and those people might not know the reasons for your code suggestion. – 
+Luca Kiebel
+ Jan 20 at 10:59
+Add a comment
+
+13
+
+It looks to me that this works:
+
+jQuery('#elem').offset().left + jQuery('#elem').width() 
+Fiddle: http://jsfiddle.net/adamovic/fcyL5sg0/
+
+Share
+Edit
+Follow
+answered Feb 24, 2015 at 7:33
+user avatar
+Mladen Adamovic
+2,90122 gold badges2727 silver badges4343 bronze badges
+Thanks for the idea @Mladen Adamovic – 
+Ana DEV
+ Feb 3, 2016 at 13:52
+Add a comment
+
+5
+
+The CSS value is only valid if it's set via style or $.css().
+
+But if you need to get the right position of an object, you should do it using javascript / jquery.
+
+Although there are some valid solutions, it's important to note that $.fn.width() doesn't take padding and borders in account. So it's better to use outerWidth().
+
+Example:
+
+$(document).width() - ($('#elem').offset().left + $('#elem</p>
+    <!--Scroll anime END-->
+      
+      </body>
+</html>
