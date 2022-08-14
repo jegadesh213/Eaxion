@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap:http://www.eaxion-ece.tech/sitemap.xml
