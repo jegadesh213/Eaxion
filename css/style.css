@@ -223,7 +223,7 @@ a{
     font-size: 10px;
 }
 /* hovering style */
-/* #hovering{
+#hovering{
     font-size: 6em;
     font-weight: 500;
     color: #222;
@@ -249,4 +249,4 @@ a{
                  0 0 40px #fff,       
                  0 0 80px #fff,               
                  0 0 120px #fff;
-} */
+}
