@@ -128,7 +128,7 @@ body {
   height: 54vh;
   width: 32vw;
   background-color: #17141d;
-  border-radius: 10px;
+  border-radius: 10px; 
   box-shadow: -1rem 0 3rem #000;
 /*   margin-left: -50px; */
   left: -110vw;
