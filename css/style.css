@@ -55,7 +55,7 @@ a{
 }
 
 .logo h3{
-    background: -webkit-linear-gradient(90deg ,#ee128f , #f3111c);
+    background: -webkit-linear-gradient(90deg , #f3111c , #f3111c);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -262,13 +262,12 @@ a{
 } */
 
 :root {
-	--background: #ee128f;
-	--bg: hsl(var(--background),90%,90%);
-	--fg: hsl(var(--background),10%,10%);
-	--primary: hsl(var(--background),90%,55%);
+	--hue: 0;
+	--bg: hsl(var(--hue),90%,90%);
+	--fg: hsl(var(--hue),10%,10%);
+	--primary: hsl(var(--hue),90%,55%);
 	--trans-dur: 0.3s;
 }
-
 .clock {
 	display: flex;
 	flex-direction: column;
@@ -276,9 +275,9 @@ a{
 	align-items: center;
 }
 .clock__block {
-	background-color: hsl(var(--background),10%,90%);
+	background-color: hsl(var(--hue),100%,50%);
 	border-radius: 0.5rem;
-	box-shadow: 0 1rem 2rem hsla(var(--background),90%,50%,0.3);
+	box-shadow: 0 1rem 2rem hsla(var(--hue),90%,50%,0.3);
 	font-size: 3em;
 	line-height: 2;
 	margin: 0.75rem;
@@ -292,7 +291,7 @@ a{
 }
 .clock__block--small {
 	border-radius: 0.25rem;
-	box-shadow: 0 0.5rem 2rem hsla(var(--background),90%,50%,0.3);
+	box-shadow: 0 0.5rem 2rem hsla(var(--hue),90%,50%,0.3);
 	font-size: 1em;
 	line-height: 3;
 	width: 3rem;
@@ -313,8 +312,8 @@ a{
 	position: absolute;
 	top: -0.05em;
 	left: -0.05em;
-	width: 0.2em;
-	height: 0.2em;
+	width: 0.1em;
+	height: 0.1em;
 	transition: background-color var(--trans-dur);
 }
 .clock__colon:before {
@@ -350,15 +349,15 @@ a{
 /* Dark theme */
 @media (prefers-color-scheme: dark) {
 	:root {
-		--bg: hsl(var(--background),10%,10%);
-		--fg: hsl(var(--background),10%,90%);
+		--bg: hsl(var(--hue),10%,10%);
+		--fg: hsl(var(--hue),10%,90%);
 	}
 	.clock__block {
-		background-color: hsl(var(--background),90%,40%);
-		box-shadow: 0 1rem 2rem hsla(var(--background),90%,60%,0.4);
+		background-color: hsl(var(--hue),90%,40%);
+		box-shadow: 0 1rem 2rem hsla(var(--hue),90%,60%,0.4);
 	}
 	.clock__block--small {
-		box-shadow: 0 0.5rem 2rem hsla(var(--background),90%,60%,0.4);
+		box-shadow: 0 0.5rem 2rem hsla(var(--hue),90%,60%,0.4);
 	}
 }
 

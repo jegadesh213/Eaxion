@@ -1,32 +1,9 @@
 const text = document.querySelector('.text p')
+let flip_flop=true;
 
 text.innerHTML = text.innerHTML.split("")
 .map((char ,i)=>`<span style="transform:rotate(${i*10}deg)">${char}</span>`)
 .join("")
-
-
-
-let num1 = document.querySelector('.num1')
-let num2 = document.querySelector('.num2')
-let num3 = document.querySelector('.num3')
-
-const CounterUpAnimation = (number , start,end ,duration)=>{
-   let startTimestamp = null;
-   const step = (tiemstamp)=>{
-    if(!startTimestamp){
-        startTimestamp = tiemstamp
-    }
-
-    let prograss = Math.min((tiemstamp - startTimestamp) / duration , 1)
-    number.innerHTML = Math.floor(prograss * (end - start) + start) + 'k+'
-
-    if(prograss <1){
-        window.requestAnimationFrame(step)
-    }
-   } 
-   window.requestAnimationFrame(step)
-}
-
 
 
 const navbar = document.querySelector('.nav-bar')
@@ -85,18 +62,6 @@ gsap.fromTo('.circle-text' ,{
     scale:1, rotation:0
 })
 
-
-
-
-
-
-
-
-setTimeout(()=>{
-    CounterUpAnimation(num1 , 0 , 100,10)
-    CounterUpAnimation(num2 , 0 , 32 ,10)
-    CounterUpAnimation(num3 , 0 , 50 ,10)
-} ,100)
 
 window.addEventListener("DOMContentLoaded",() => {
 	const clock = new BouncyBlockClock(".clock");
@@ -160,23 +125,38 @@ class BouncyBlockClock {
 	}
 	updateTime() {
 		const rawDate = new Date();
-		const date = new Date(Math.ceil(rawDate.getTime() / 1e3) * 1e3 + this.mod);
-		let h = date.getHours();
-		const m = date.getMinutes();
-		const s = date.getSeconds();
-		const ap = h < 12 ? "AM" : "PM";
 
-		if (h === 0) h = 12;
-		if (h > 12) h -= 12;
+		var today = new Date();
+		let target = new Date("September 17, 2022");
+
+		let date_future = target.getTime();
+		let date_now = today.getTime();
+		var delta = Math.abs(date_future - date_now) / 1000;
+
+		var days = Math.floor(delta / 86400);
+		delta -= days * 86400;
+
+		var hours = Math.floor(delta / 3600) % 24;
+		delta -= hours * 3600;
+
+		var minutes = Math.floor(delta / 60) % 60;
+		delta -= minutes * 60;
+		var seconds = delta % 60;
+
+		console.log(days+" Days"+hours+" Hours"+minutes+" Minutes");
+
+
+		const date = new Date(Math.ceil(rawDate.getTime() / 1e3) * 1e3 + this.mod);
+		let h = days;
+		const m = hours;
+		const s = minutes;
+
+		flip_flop=!flip_flop
+		const ap=(flip_flop)?"To":"Go";
 
 		this.time.a = [...this.time.b];
 		this.time.b = [
-			(h < 10 ? `0${h}` : `${h}`),
-			(m < 10 ? `0${m}` : `${m}`),
-			(s < 10 ? `0${s}` : `${s}`),
-			ap
-		];
+			h,m,s,ap];
 
-		if (!this.time.a.length) this.time.a = [...this.time.b];
 	}
 }
