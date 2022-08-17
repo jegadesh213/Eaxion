@@ -13,6 +13,25 @@
     src: url(../assets/font/LP\ Horizont\ Caps.otf);
     font-family: l;
 }
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@600&display=swap');
+
+html, body, svg, .bg {
+  width:100%;
+  height:100%;
+  overflow:hidden;
+  position:absolute;
+  top:0;
+  font-family: 'Roboto', sans-serif;
+  font-size:19px;
+}
+
+body {
+  background:#000;
+}
+
+.bg {
+  background: linear-gradient(165deg, black 30%, darkblue 200%);
+}
 
 
 body{
@@ -188,7 +207,7 @@ a{
 .circle img{
     display: inline;
     width: 50%;
-    margin-left: auto;
+    margin-left: 27%;
     margin-right: auto;
     margin-top: 5%;
     position: relative;
