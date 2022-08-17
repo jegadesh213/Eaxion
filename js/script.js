@@ -121,7 +121,7 @@ class BouncyBlockClock {
 	}
 	tick() {
 		clearTimeout(this.digitsTimeout);
-		this.digitsTimeout = setTimeout(this.loop.bind(this),1e3);	
+		this.digitsTimeout = setTimeout(this.loop.bind(this),3000);	
 	}
 	updateTime() {
 		const rawDate = new Date();
@@ -148,15 +148,22 @@ class BouncyBlockClock {
 
 		const date = new Date(Math.ceil(rawDate.getTime() / 1e3) * 1e3 + this.mod);
 		let h = days;
-		const m = hours;
-		const s = minutes;
+		let m = hours;
+		let s = minutes;
+
+		
 
 		flip_flop=!flip_flop
+
+		const hr=(flip_flop)?"Ds":h;
+		const mi=(flip_flop)?"Hr":m;
+		const se=(flip_flop)?"Mn":s;
 		const ap=(flip_flop)?"To":"Go";
 
 		this.time.a = [...this.time.b];
 		this.time.b = [
-			h,m,s,ap];
+			hr,mi,se,ap];
 
+		
 	}
 }
