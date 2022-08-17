@@ -5,12 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E-Axion</title>
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js" integrity="sha512-VEBjfxWUOyzl0bAwh4gdLEaQyDYPvLrZql3pw1ifgb6fhEvZl9iDDehwHZ+dsMzA0Jfww8Xt7COSZuJ/slxc4Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 <body>
-
-
     <div class="circle-text">
         <div class="text">
             <div class="dot"></div>
@@ -32,43 +30,57 @@
         </nav>
     </header>
 
+    <div class="side-two">
+        <div class="circle">
+            <img src="./images/20220816_103133.png" alt="">
+            <span class="behind" id="b1"><img src="" alt=""></span>
+            <span class="behind" id="b2"><img src="" alt=""></span>
+        </div>
+    </div>
+
     <div class="container">
         <div class="side-one">
-            <h2 id="hovering"><span>E</span><span>AXION</span></h2>
+            <!-- <h2 id="hovering"><span>E</span><span>AXION</span></h2> -->
             <div class="buttons">
                 <button class="btn skew">EVENT DETAILS</button>
-                <button class="btn skew">REGISTRAION</button>
+                <button class="btn skew">REGISTRATION</button>
             </div>
             <div class="statistics">
-                <div class="statistic">
-                    <div class="num num1">
-                        
+                <div class="clock" aria-label="00:00:00 AM">
+                    <div class="clock__block clock__block--delay2" aria-hidden="true" data-time-group>
+                        <div class="clock__digit-group">
+                            <div class="clock__digits" data-time="a">00</div>
+                            <div class="clock__digits" data-time="b">00</div>
+                        </div>
                     </div>
-                    <div class="s">Days</div>
-                </div>
-                <div class="statistic">
-                    <div class="num num2">
-                       
+                    <div class="clock__colon"></div>
+                    <div class="clock__block clock__block--delay1" aria-hidden="true" data-time-group>
+                        <div class="clock__digit-group">
+                            <div class="clock__digits" data-time="a">00</div>
+                            <div class="clock__digits" data-time="b">00</div>
+                        </div>
                     </div>
-                    <div class="s">Hours</div>
-                </div>
-                <div class="statistic">
-                    <div class="num num3">
-                      
+                    <div class="clock__colon"></div>
+                    <div class="clock__block" aria-hidden="true" data-time-group>
+                        <div class="clock__digit-group">
+                            <div class="clock__digits" data-time="a">00</div>
+                            <div class="clock__digits" data-time="b">00</div>
+                        </div>
                     </div>
-                    <div class="s">Minutes</div>
+                    <div class="clock__block clock__block--delay2 clock__block--small" aria-hidden="true" data-time-group>
+                        <div class="clock__digit-group">
+                            <div class="clock__digits" data-time="a">PM</div>
+                            <div class="clock__digits" data-time="b">AM</div>
+                        </div>
+                    </div>
                 </div>
             </div>
     
         </div>
 
 
-        <div class="side-two">
-            <div class="circle">
-                <img src="./images/Eaxion.png" alt="">
-            </div>
-        </div>
+        
     </div>
-    <script src="./js/script.js"></script>
+    <script src="./script.js"></script>
 </body>
 </html>
