@@ -5,11 +5,11 @@
 }
 
 @font-face{
-    src: url(font/Zolina-Bold.ttf);
+    src: url(../assets/font/Zolina-Bold.ttf);
     font-family: z;
 }
 @font-face{
-    src: url(font/LP\ Horizont\ Caps.otf);
+    src: url(../assets/font/LP\ Horizont\ Caps.otf);
     font-family: l;
 }
 
