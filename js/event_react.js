@@ -3,7 +3,15 @@ var hideCard = false;
 
 let first_card_anime = document.getElementById("first_card_anime");
 
+//Some Math Stuff
+function px_to_vw(px){
+  return px * (100 / document.documentElement.clientWidth);
+}
+function px_to_vh(px){
+  return px * (100 / document.documentElement.clientHeight);
+}
 
+//Working
 function hideView(){
     hideCard=!hideCard;
     if(hideCard){
@@ -64,27 +72,41 @@ function description(windowHeight){
   let third_explore = document.getElementById("third-explore");
   let fourth_explore = document.getElementById("fourth-explore");
   let fifth_explore = document.getElementById("fifth-explore");
+  
+  var vieww=[0,0,0,0,0];
 
-    if(windowHeight>120 && windowHeight<544)
-        first_explore.style.left = 1.7*windowHeight + "px";
-    if(windowHeight>300 && windowHeight<1440)
-        second_explore.style.left = 0.63099*windowHeight + "px";
-    if(windowHeight>400 && windowHeight<2344)
-      third_explore.style.left = 0.3857*windowHeight + "px";
-    if(windowHeight>500 && windowHeight<3267)
-      fourth_explore.style.left = 0.27572*windowHeight + "px";
-    if(windowHeight>600 && windowHeight<4078)
-      fifth_explore.style.left = 0.21999999*windowHeight + "px";
+    if(windowHeight>120 && windowHeight<544){
+        vieww[0]=vieww[0]+1;
+        first_explore.style.left =  vieww[0] +"vw";
+    }
+        //first_explore.style.left = px_to_vw(1.7*windowHeight) + "vw";
+    if(windowHeight>300 && windowHeight<1440){
+        vieww[1]=vieww[1]+1;
+        second_explore.style.left = vieww[1] + "vw";
+    }
+        //second_explore.style.left = px_to_vw(0.63099*windowHeight) + "vw";
+    if(windowHeight>400 && windowHeight<2344){
+      vieww[2]=vieww[2]+1;
+      third_explore.style.left = vieww[2] + "vw";
+    }
+      //third_explore.style.left = px_to_vw(0.3857*windowHeight) + "vw";
+    if(windowHeight>500 && windowHeight<3267){
+      vieww[3]=vieww[3]+1;
+      fourth_explore.style.left = vieww[3] + "vw";
+    }
+      //fourth_explore.style.left = px_to_vw(0.27572*windowHeight) + "vw";
+    if(windowHeight>600 && windowHeight<4078){
+      vieww[4]=vieww[4]+1;
+      fifth_explore.style.left = vieww[4] + "vw";
+    }
+      //fifth_explore.style.left = px_to_vw(0.21999999*windowHeight) + "vw";
       
-      
-  console.log("Left : "+fifth_explore.style.left);
+  
 
 }
 
   function parallax(){
-    let defa=150;
     var windowHeight = window.scrollY;
-    console.log(windowHeight);
 
     transit_card(windowHeight);
     description(windowHeight);
