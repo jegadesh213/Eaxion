@@ -30,7 +30,8 @@ body {
 }
 
 .bg {
-  background: linear-gradient(165deg, black 30%, darkblue 200%);
+    background: black;
+    /* background: linear-gradient(90deg, rgba(7,82,110,1) 7%, rgba(68,0,19,1) 100%); */
 }
 
 
@@ -78,6 +79,7 @@ a{
     background: -webkit-linear-gradient(90deg , #f3111c , #f3111c);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    text-size-adjust: 50%;
 }
 
 .btn {
