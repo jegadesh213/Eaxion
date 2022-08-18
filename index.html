@@ -9,6 +9,18 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js" integrity="sha512-VEBjfxWUOyzl0bAwh4gdLEaQyDYPvLrZql3pw1ifgb6fhEvZl9iDDehwHZ+dsMzA0Jfww8Xt7COSZuJ/slxc4Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 <body>
+    <div class="bg"></div>
+    <svg stroke="#fff" stroke-linecap="round">
+    <g class="stage">
+    <rect width="100%" height="100%" fill="rgba(0,0,0,0)" stroke="none"/>
+    </g>
+    <g class="toggle" style="cursor:pointer;user-select:none">
+    <path d="M100,20 118,20" stroke-width="25"/>
+    <path class="knob" d="M100,20 100,20" stroke-width="20" stroke="#000"/>
+    <text class="txt1" fill="#fff" x="11" y="26">Manual</text>
+    <text class="txt2" fill="#fff" x="144" y="26" opacity="0.3">Auto</text>
+     </g>
+    </svg>
     <div class="circle-text">
         <div class="text">
             <div class="dot"></div>
@@ -19,9 +31,9 @@
     <header>
         <nav class="nav-bar">
             <ul class="menu">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About us</a></li>
-                <li><a href="events.html">Events</a></li>
+                <li><a href=""><ion-icon name="home-outline">HOME</ion-icon></a></li>
+                <li><a href=""><ion-icon name="person-outline"></ion-icon></a></li>
+                <li><a href="/events.html"><ion-icon name="extension-puzzle-outline"></ion-icon></a></li>
             </ul>
             <div class="logo">
                 <h3><a href="https://www.stjosephstechnology.ac.in/web/index.html">St Josephs Institute of Technology</a></h3>
@@ -32,10 +44,10 @@
 
     <div class="side-two">
         <div class="circle">
-            <img style="height: 100px; width: 100px" src="./images/ea.png">
-            <img src="./images/x.png" alt="">
+            <!-- <img style="height: 100px; width: 100px" src=""> -->
+            <img src="./images/Eaxion.png" alt="">
             
-            <img style="height: 100px; width: 100px" src="./images/ion.png">
+            <!-- <img style="height: 100px; width: 100px" src=""> -->
         </div>
     </div>
 
@@ -89,6 +101,8 @@
 
         
     </div>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script src="./js/script.js"></script>
 </body>
 </html>
